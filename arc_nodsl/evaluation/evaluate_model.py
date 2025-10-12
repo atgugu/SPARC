@@ -2,7 +2,7 @@
 """
 Comprehensive model evaluation script.
 
-Evaluates trained SPARK model on ARC validation set with task-level metrics.
+Evaluates trained SPARC model on ARC validation set with task-level metrics.
 Uses train-first gating: only predict test when all train pairs are solved.
 """
 
@@ -374,7 +374,7 @@ def evaluate_model(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Evaluate SPARK model on ARC validation set"
+        description="Evaluate SPARC model on ARC validation set"
     )
     parser.add_argument(
         "--autoencoder_checkpoint",

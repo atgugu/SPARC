@@ -1,12 +1,12 @@
 # CLAUDE.md - Quick Start Guide for Claude Code Instances
 
-*This guide is designed to help future Claude instances quickly become productive with the SPARK (Slot Programs via Active Radiation for ARC) codebase.*
+*This guide is designed to help future Claude instances quickly become productive with the SPARC (Slot Programs via Active Radiation for ARC) codebase.*
 
 ---
 
 ## 🎯 Executive Summary
 
-**SPARK** is a no-DSL ARC solver that learns latent operators on object-centric representations instead of using hand-coded transformation rules. The system:
+**SPARC** is a no-DSL ARC solver that learns latent operators on object-centric representations instead of using hand-coded transformation rules. The system:
 1. Decomposes grids into "slots" (object representations) via attention
 2. Learns a library of latent operators that transform these slots
 3. Uses a controller to select operator sequences via reinforcement learning
@@ -290,7 +290,7 @@ During augmentation, the same random transformation is applied consistently to b
 
 ### Color Augmentation (NEW)
 
-In addition to spatial transformations, SPARK now supports **color augmentation** via bijective permutations of the ARC color palette (0-10). This provides massive data diversity without changing visual structure.
+In addition to spatial transformations, SPARC now supports **color augmentation** via bijective permutations of the ARC color palette (0-10). This provides massive data diversity without changing visual structure.
 
 **Key Features:**
 - **Bijective Mapping**: One-to-one color permutations (11! = 39,916,800 possible)

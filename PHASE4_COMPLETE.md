@@ -5,7 +5,7 @@
 
 ## Overview
 
-Phase 4 implements the complete training pipeline for the SPARK ARC solver, including:
+Phase 4 implements the complete training pipeline for the SPARC ARC solver, including:
 - REINFORCE losses for policy gradient training
 - Inner loop single-task adaptation
 - Outer loop meta-learning (Reptile algorithm)
@@ -303,7 +303,7 @@ candidates = beam_search(
 
 ```
 ┌─────────────────────────────────────────────────┐
-│         SPARK Training Pipeline                 │
+│         SPARC Training Pipeline                 │
 └─────────────────────────────────────────────────┘
 
 Phase 1: Data Infrastructure ✓
@@ -504,7 +504,7 @@ After **extended training** (500+ meta-epochs):
 
 ## Citation and Attribution
 
-**SPARK ARC Solver**
+**SPARC ARC Solver**
 Based on:
 - Slot Attention (Locatello et al., 2020)
 - REINFORCE (Williams, 1992)
@@ -519,7 +519,7 @@ Based on:
 
 ## Conclusion
 
-Phase 4 successfully implements a complete training pipeline for the SPARK ARC solver using:
+Phase 4 successfully implements a complete training pipeline for the SPARC ARC solver using:
 - REINFORCE for policy gradient learning
 - Reptile for meta-learning across tasks
 - Constraint-based rewards

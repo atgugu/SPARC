@@ -1,6 +1,6 @@
-# SPARK: Development Progress Summary
+# SPARC: Development Progress Summary
 
-**Project**: SPARK (Slot Programs via Active Radiation for ARC)
+**Project**: SPARC (Slot Programs via Active Radiation for ARC)
 **Last Updated**: 2025-10-12
 **Status**: Phase 2 Core Models ~80% Complete
 

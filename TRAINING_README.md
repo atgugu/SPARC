@@ -1,6 +1,6 @@
-# SPARK Training & Inference Guide
+# SPARC Training & Inference Guide
 
-Complete guide for training and evaluating the SPARK (Slot Programs via Active Radiation for ARC) system.
+Complete guide for training and evaluating the SPARC (Slot Programs via Active Radiation for ARC) system.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ Complete guide for training and evaluating the SPARK (Slot Programs via Active R
 
 ### Training Pipeline
 
-SPARK uses a **three-phase training approach**:
+SPARC uses a **three-phase training approach**:
 
 1. **Phase 1: Autoencoder Pretraining** (1-2 days)
    - Train SlotAttention encoder + renderer to reconstruct ARC grids
@@ -99,7 +99,7 @@ Val Loss: 0.6547, Accuracy: 94.32%
 
 ### Data Augmentation Strategies
 
-SPARK supports **three augmentation modes** to increase training data diversity:
+SPARC supports **three augmentation modes** to increase training data diversity:
 
 #### Strategy 1: Spatial Augmentation (DataLoader-level)
 
