@@ -27,5 +27,51 @@ if [ ! -d "node_modules" ]; then
     }
 fi
 
-# Run the visualizer with all arguments forwarded
-npm run dev -- "$@"
+# Convert relative paths to absolute paths for checkpoints and add dataset path
+ARGS=()
+DATASET_SPECIFIED=false
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -a|--autoencoder)
+            # Convert relative path to absolute
+            if [[ "$2" != /* ]]; then
+                ARGS+=("$1" "$SCRIPT_DIR/$2")
+            else
+                ARGS+=("$1" "$2")
+            fi
+            shift 2
+            ;;
+        -c|--controller)
+            # Convert relative path to absolute
+            if [[ "$2" != /* ]]; then
+                ARGS+=("$1" "$SCRIPT_DIR/$2")
+            else
+                ARGS+=("$1" "$2")
+            fi
+            shift 2
+            ;;
+        -d|--dataset)
+            DATASET_SPECIFIED=true
+            # Convert relative path to absolute
+            if [[ "$2" != /* ]]; then
+                ARGS+=("$1" "$SCRIPT_DIR/$2")
+            else
+                ARGS+=("$1" "$2")
+            fi
+            shift 2
+            ;;
+        *)
+            ARGS+=("$1")
+            shift
+            ;;
+    esac
+done
+
+# Add default dataset path if not specified
+if [ "$DATASET_SPECIFIED" = false ]; then
+    ARGS+=("-d" "$SCRIPT_DIR/data/arc-agi_training_challenges.json")
+fi
+
+# Run the visualizer with processed arguments
+npm run dev -- "${ARGS[@]}"

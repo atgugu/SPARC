@@ -21,6 +21,7 @@ program
   .option('-d, --dataset <path>', 'Dataset path', 'data/arc-agi_evaluation_challenges.json')
   .option('-s, --steps <n>', 'Adaptation steps', parseInt, 20)
   .option('-b, --beam-size <n>', 'Beam size', parseInt, 8)
+  .option('--time-budget <n>', 'Time budget in seconds', parseFloat, 60.0)
   .parse();
 
 const options = program.opts();
@@ -41,6 +42,7 @@ const { waitUntilExit } = render(
     dataset={options.dataset}
     adaptationSteps={options.steps}
     beamSize={options.beamSize}
+    timeBudget={options.timeBudget}
   />
 );
 

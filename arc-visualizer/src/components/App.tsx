@@ -19,6 +19,7 @@ interface AppProps {
   dataset?: string;
   adaptationSteps: number;
   beamSize?: number;
+  timeBudget?: number;
 }
 
 const App: React.FC<AppProps> = ({
@@ -29,6 +30,7 @@ const App: React.FC<AppProps> = ({
   dataset,
   adaptationSteps,
   beamSize,
+  timeBudget,
 }) => {
   const { state } = usePythonRunner({
     autoencoder,
@@ -38,6 +40,7 @@ const App: React.FC<AppProps> = ({
     dataset,
     adaptationSteps,
     beamSize,
+    timeBudget,
     emitEvery: 2,
   });
 

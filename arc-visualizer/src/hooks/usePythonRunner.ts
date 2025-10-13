@@ -21,6 +21,7 @@ interface PythonRunnerConfig {
   dataset?: string;
   adaptationSteps: number;
   beamSize?: number;
+  timeBudget?: number;
   emitEvery?: number;
 }
 
@@ -68,6 +69,10 @@ export function usePythonRunner(config: PythonRunnerConfig) {
 
     if (config.beamSize) {
       args.push('--beam_size', config.beamSize.toString());
+    }
+
+    if (config.timeBudget) {
+      args.push('--time_budget', config.timeBudget.toString());
     }
 
     if (config.emitEvery) {
@@ -141,6 +146,7 @@ export function usePythonRunner(config: PythonRunnerConfig) {
     config.dataset,
     config.adaptationSteps,
     config.beamSize,
+    config.timeBudget,
     config.emitEvery,
   ]);
 

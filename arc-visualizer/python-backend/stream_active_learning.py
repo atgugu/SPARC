@@ -170,6 +170,12 @@ def main():
         default=2,
         help='Emit events every N steps'
     )
+    parser.add_argument(
+        '--time_budget',
+        type=float,
+        default=60.0,
+        help='Time budget in seconds for adaptation'
+    )
 
     args = parser.parse_args()
 
@@ -245,7 +251,8 @@ def main():
             binary_bonus_weight=0.5,
             device=device,
             emitter=emitter,
-            emit_every=args.emit_every
+            emit_every=args.emit_every,
+            time_budget=args.time_budget
         )
 
         # Run adaptation

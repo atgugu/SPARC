@@ -24,7 +24,7 @@ class StreamingInnerLoop(InnerLoop):
     allowing the JavaScript frontend to visualize the adaptation process.
     """
 
-    def __init__(self, *args, emitter: Optional[EventEmitter] = None, emit_every: int = 2, **kwargs):
+    def __init__(self, *args, emitter: Optional[EventEmitter] = None, emit_every: int = 2, time_budget: float = 60.0, **kwargs):
         """
         Initialize streaming inner loop.
 
@@ -32,11 +32,13 @@ class StreamingInnerLoop(InnerLoop):
             *args: Forwarded to InnerLoop
             emitter: EventEmitter instance (creates new if None)
             emit_every: Emit events every N steps (default 2, to avoid spam)
+            time_budget: Time budget in seconds for adaptation (default 60.0)
             **kwargs: Forwarded to InnerLoop
         """
         super().__init__(*args, **kwargs)
         self.emitter = emitter if emitter is not None else EventEmitter()
         self.emit_every = emit_every
+        self.time_budget = time_budget
 
     def train_on_task(
         self,
@@ -56,7 +58,7 @@ class StreamingInnerLoop(InnerLoop):
         # Emit adaptation start
         self.emitter.adaptation_start(
             max_steps=self.num_inner_steps,
-            time_budget=60.0,  # Hardcoded for now
+            time_budget=self.time_budget,
             beam_size=self.beam_size
         )
 

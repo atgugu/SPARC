@@ -2,6 +2,12 @@
 
 An experimental approach to ARC that attempts to learn operators end-to-end rather than using hand-written rules.
 
+<p align="center">
+  <img src="visualizer.png" alt="SPARC Active Learning Visualizer" width="800">
+  <br>
+  <em>Real-time terminal UI showing active learning adaptation on an ARC task</em>
+</p>
+
 ---
 
 ## What is SPARC?

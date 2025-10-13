@@ -30,8 +30,10 @@ const AdaptationProgress: React.FC<AdaptationProgressProps> = ({
 
   // Create progress bar
   const createBar = (progress: number, width: number = 30): string => {
-    const filled = Math.floor(progress * width);
-    const empty = width - filled;
+    // Clamp progress between 0 and 1 to prevent negative values
+    const clampedProgress = Math.max(0, Math.min(1, progress));
+    const filled = Math.floor(clampedProgress * width);
+    const empty = Math.max(0, width - filled);
     return '█'.repeat(filled) + '░'.repeat(empty);
   };
 
