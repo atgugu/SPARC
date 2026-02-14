@@ -675,7 +675,7 @@ The visualizer uses a client-server architecture:
 - **Backend:** Python with streaming JSON events
 - **Communication:** IPC via stdout (no network needed)
 
-See `arc-visualizer/ARCHITECTURE.md` for details.
+See `arc-visualizer/README.md` for details.
 
 #### Troubleshooting
 

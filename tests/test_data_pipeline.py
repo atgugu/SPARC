@@ -9,7 +9,7 @@ from pathlib import Path
 from tqdm import tqdm
 
 # Add project to path
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from arc_nodsl.data.loader import ARCDataset, compute_dataset_stats
 from arc_nodsl.data.batching import create_dataloader
